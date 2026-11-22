@@ -29,37 +29,6 @@ You need these installed:
    code .
    ```
 
-## Files
-
-| File | What it does | Do you edit it? |
-|---|---|---|
-| `isotope.py` | One isotope (TODO 1, 2, 8) | Yes |
-| `library.py` | All isotopes, lookup by name or energy (TODO 3, 4) | Yes |
-| `detector.py` | Processes events (TODO 5, 6, 7, 12) | Yes |
-| `chain.py` | Follows a decay chain (TODO 9) | Yes |
-| `pqueue.py` | A priority queue (TODO 10, 11) | Yes |
-| `main.py` | Runs everything | No |
-| `plotter.py` | Draws the live graph | No |
-| `check.py` | Tests your TODOs | No |
-| `data/events.csv` | The detector events | No |
-| `solutions/` | Finished versions, only for catching up | No |
-
-## Run and check
-
-- Test your work: `python check.py`
-- Run the program: `python main.py`
-
-## If you fall behind
-
-Copy the finished file over yours, then keep going. Example for `library.py`:
-
 - Mac or Linux: `cp solutions/library.py library.py`
 - Windows: `copy solutions\library.py library.py`
 
-## Save your work to GitHub
-
-```
-git add .
-git commit -m "Finish detector processor"
-git push
-```
