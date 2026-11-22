@@ -12,7 +12,7 @@ You need these installed:
 - **A free GitHub account**
 - **matplotlib** (install with `pip install matplotlib`)
 
-## Get the code (Git part of the session)
+## Get the code
 
 1. On GitHub, click **Fork** on this repository. This makes your own copy.
 2. In a terminal, clone **your fork** (use your username):
