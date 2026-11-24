@@ -36,7 +36,6 @@ isotope each one came from, and draws a live graph.
 | `data/isotopes.csv` | The list of known isotopes |
 | `main.py` | Runs everything. Do not edit. |
 | `plotter.py` | Draws the live graph. Do not edit. |
-| `check.py` | Tests your work. Do not edit. |
 | `isotope.py` | One isotope |
 | `library.py` | All isotopes, lookup by name or energy |
 | `detector.py` | Processes events |
