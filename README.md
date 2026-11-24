@@ -3,15 +3,14 @@
 You will write a small program that reads gamma ray events from a detector, works out which
 isotope each one came from, and draws a live graph.
 
-## You need (we set this up together at the start)
-
+## You need
 - **Python 3.10 or newer** (check: `python --version`)
 - **Git** (check: `git --version`)
 - **VS Code**
 - **A free GitHub account**
 - **matplotlib** (install: `pip install matplotlib`)
 
-## Get the files (Git part of the session)
+## Get the files
 
 1. On GitHub, click **Fork** on this repository.
 2. In a terminal, clone **your fork** (use your username):
