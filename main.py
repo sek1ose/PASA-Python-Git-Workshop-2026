@@ -1,6 +1,5 @@
 import csv
 
-from chain import DecayChain
 from detector import Detector
 from isotope import Isotope
 from library import IsotopeLibrary
@@ -8,26 +7,41 @@ from plotter import LivePlot
 
 
 def build_library():
-    pass
+    library = IsotopeLibrary()
+    with open("data/isotopes.csv") as file:
+        for row in csv.DictReader(file):
+            library.add(Isotope(row["name"], float(row["energy"]), row["half_life"]))
+    return library
 
 
 def load_events(detector, filename):
-    pass
+    with open(filename) as file:
+        for row in csv.DictReader(file):
+            detector.add_event(float(row["time"]), float(row["energy"]))
+
 
 def main():
     library = build_library()
+    detector = Detector(library)
+    load_events(detector, "data/events.csv")
+    plot = LivePlot()
 
-    # Decay chain (Rn-222 and Po-218 are skipped, they have no gamma line)
-    radium = library.get("Ra-226")
-    lead = library.get("Pb-214")
-    bismuth = library.get("Bi-214")
-    radium.add_daughter(lead)
-    radium.add_daughter(lead)   # adding twice must not make a duplicate
-    lead.add_daughter(bismuth)
+    while True:
+        record = detector.process_next()
+        if record is None:
+            break
+        time, energy, name = record
+        print(f"t={time:6.1f} s   {energy:7.1f} keV   {name}")
+        plot.update(detector.count_by_isotope())
 
-    """
-    Space for code
-    """
+    print("\nCounts:", detector.count_by_isotope())
+
+    undone = detector.undo_last()
+    print("Undid last event:", undone)
+    plot.update(detector.count_by_isotope())
+
+    plot.keep_open()
+
 
 if __name__ == "__main__":
     main()
