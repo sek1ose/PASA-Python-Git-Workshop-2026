@@ -39,5 +39,5 @@ isotope each one came from, and draws a live graph.
 | `library.py` | All isotopes, lookup by name or energy |
 | `detector.py` | Processes events |
 | `chain.py` | Follows a decay chain |
-| `pqueue.py` | A priority queue |
+
 
